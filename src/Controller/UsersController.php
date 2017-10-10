@@ -117,7 +117,7 @@ class UsersController extends AppController {
         // die();
         $this->loadModel('RoleUsers');
         if ($this->request->is('post')) {
-           
+
             $user = $this->Auth->identify();
 
             if ($user) {
@@ -141,7 +141,11 @@ class UsersController extends AppController {
     }
 
     public function logout() {
-        return $this->redirect($this->Auth->logout());
+//        debug($this->Auth);
+//        debug($this->params);
+//        exit;
+        $this->Auth->logout();
+        return $this->redirect("/");
     }
 
     public function alterarPerfil() {
@@ -168,11 +172,27 @@ class UsersController extends AppController {
     }
 
     public function isAuthorized($user) {
+        $role = $this->request->session()->read('role')['role'];
+
+
+//        debug($user);
+//        debug($this->request->action);
+//        debug($role);
+//        exit;
+
 
         if ($this->request->action === 'alterarPerfil') {
             return true;
-        }else
-        if ($role == User::ROLE_PRESIDENTE) {
+        } elseif ($role == User::ROLE_PRESIDENTE) {
+            if (in_array($this->request->action, ['edit', 'view', 'index', 'add', 'logout'])) {
+                return true;
+            }
+        } elseif ($role == User::ROLE_PARECERISTA) {
+            if (in_array($this->request->action, ['edit', 'view', 'index', 'add', 'logout'])) {
+                return true;
+            }
+        
+        } elseif ($role == User::ROLE_PROPONENTE) {
             if (in_array($this->request->action, ['edit', 'view', 'index', 'add', 'logout'])) {
                 return true;
             }

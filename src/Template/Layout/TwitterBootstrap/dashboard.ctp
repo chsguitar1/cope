@@ -64,7 +64,7 @@ $this->start('tb_body_start');
                     <li><?= $this->Html->link('Sair', array('controller' => 'Users', 'action' => 'logout')) ?></li>
                 </ul>
                 <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
+<!--                    <input type="text" class="form-control" placeholder="Search...">-->
                 </form>
 
             </div>

@@ -249,7 +249,7 @@ class ProjetosController extends AppController {
                 $projeto = $this->Projetos->get($id, ['contain' => ['Cursos', 'Pessoas', 'SolicitacoesCertificados', 'ParticipantesProjetos', 'ParticipantesProjetos.Pessoas']]);
                 return $this->redirect(['action' => 'addParticipantes', $projeto->id]);
             } else {
-                $this->Flash->error(__('Erro ao salvara o Participante. Tente novamente.'));
+                $this->Flash->error(__('Erro ao salvar o Participante. Tente novamente.'));
             }
         }
 
@@ -496,6 +496,8 @@ class ProjetosController extends AppController {
     }
 
     public function redirecionar($role = null) {
+        
+        
 
         $role = $this->request->session()->read('role')['role'];
         switch ($role) {

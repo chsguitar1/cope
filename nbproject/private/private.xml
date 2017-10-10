@@ -3,9 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/wamp64/www/projetos/cope/src/Template/Cronograma/indexprojeto.ctp</file>
-            <file>file:/E:/wamp64/www/projetos/cope/src/Template/Projetos/index.ctp</file>
-            <file>file:/E:/wamp64/www/projetos/cope/src/Template/Cronograma/add.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Model/Entity/Projeto.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Controller/UsersController.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Controller/ProjetosController.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Controller/RoleUsersController.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Model/Table/ProjetosTable.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Template/Pareceres/encaminhar_parecer.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Controller/SolicitacaoPareceresController.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Template/Users/add.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Template/Layout/TwitterBootstrap/dashboard.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Template/Projetos/add_requerente.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Template/Projetos/pre_protocolo.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Model/Entity/Pessoa.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Model/Table/SolicitacaoPareceresTable.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Template/Projetos/add_participantes.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/composer.json</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Template/Projetos/edit.ctp</file>
+            <file>file:/C:/wamp64/www/projetos/cope/src/Mailer/PessoaMailer.php</file>
+            <file>file:/C:/wamp64/www/projetos/cope/config/app.php</file>
         </group>
     </open-files>
 </project-private>

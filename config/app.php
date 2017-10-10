@@ -173,7 +173,7 @@ return [
             'port' => 587,
             'timeout' => 30,
             'username' => 'chsguitar1@gmail.com',
-            'password' => 'Pc3800chstic',
+            'password' => 'Pc3800chsTic',
             'tls' => true
            
         ],
