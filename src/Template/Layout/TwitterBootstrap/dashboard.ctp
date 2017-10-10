@@ -10,19 +10,19 @@ $this->start('tb_body_start');
 
 
 <body <?= $this->fetch('tb_body_attrs') ?>>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background: #008a4d" >
+ 
         <?php
         echo $this->Html->image("ifpr_logo.png", [
-            "alt" => "Brownies", 'style' => 'background-color: white; float: left; margin-right: 15px;',
+            "alt" => "Brownies", 'style' => ' float: left; margin-right: 15px;',
             'url' => ['controller' => 'Projetos', 'action' => 'redirecionar']
         ]);
         ?>
 
 
         <div class="row">
-            <div class="col-md-9 col-sm-9 col-xs-9">
-                <?= $role_padrao ?>
+            <div class=" nav nav navbar-right col-md-9 col-sm-9 col-xs-9">
+              
                 <?= $this->Form->create('Perfil', ['url' => ['controller' => 'Users', 'action' => 'alterar_perfil'], 'id' => 'formPerfil']) ?>
                 <?=
                 $this->Form->input('role', ['options' => $roles, 'default' => $role_padrao, 'label' => ['text' => 'Perfil', 'style' => 'color: white'],
@@ -50,18 +50,18 @@ $this->start('tb_body_start');
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right visible-xs">
-<?= $this->fetch('tb_sidebar') ?>
+                <?= $this->fetch('tb_sidebar') ?>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li><?= $this->Html->link('Projetos', array('controller' => 'Projetos', 'action' => 'index')) ?></li>
-                    <li><?= $this->Html->link('Pessoas', array('controller' => 'Pessoas', 'action' => 'index')) ?></li>
-                    <li><?= $this->Html->link('Usuários', array('controller' => 'Users', 'action' => 'index')) ?></li>
-                    <li><?= $this->Html->link('Cursos', array('controller' => 'Cursos', 'action' => 'index')) ?></li>
-                    <li><?= $this->Html->link('Pareceres', array('controller' => 'SolicitacaoPareceres', 'action' => 'index')) ?></li>
+                    <li><?= $this->Html->link('Projetos', array('controller' => 'Projetos', 'action' => 'index'),array('style' => 'color:#ffffff;font-size:20px;')) ?></li>
+                    <li><?= $this->Html->link('Pessoas', array('controller' => 'Pessoas', 'action' => 'index'),array('style' => 'color:#ffffff;font-size:20px;')) ?></li>
+                    <li><?= $this->Html->link('Usuários', array('controller' => 'Users', 'action' => 'index'), array('style' => 'color:#ffffff;font-size:20px;')) ?></li>
+                    <li><?= $this->Html->link('Cursos', array('controller' => 'Cursos', 'action' => 'index'),array('style' => 'color:#ffffff;font-size:20px;')) ?></li>
+                    <li><?= $this->Html->link('Pareceres', array('controller' => 'SolicitacaoPareceres', 'action' => 'index'),array('style' => 'color:#ffffff;font-size:20px;')) ?></li>
 
 
-                    <li><?= $this->Html->link('Sair', array('controller' => 'Users', 'action' => 'logout')) ?></li>
+                    <li><?= $this->Html->link('Sair', array('controller' => 'Users', 'action' => 'logout'),array('style' => 'color:#ffffff;font-size:20px;')) ?></li>
                 </ul>
                 <form class="navbar-form navbar-right">
 <!--                    <input type="text" class="form-control" placeholder="Search...">-->

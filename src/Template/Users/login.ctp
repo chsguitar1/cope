@@ -2,10 +2,10 @@
     $this->extend('../Layout/TwitterBootstrap/signin');
     ?>
     
-<div class="container-fluid">
-    <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info" >
-            <div class="panel-heading">
+<div class="container-fluid" >
+    <div style="margin-top:50px;background: #008a4d; align-content: center" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" style="margin-top: 12px">
+            <div class="panel-heading"  style="background: #ffffff">
                <?= $this->Flash->render('auth') ?>
                 <?= $this->Form->create() ?>
                 <fieldset>

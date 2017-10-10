@@ -15,7 +15,7 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
            // echo $this->Form->input('id_solicitacao_parecer');
               echo $this->Form->input('tipo_resposta', ['options' => $parecer->tiposRespostasPareceres()]);
             echo $this->Form->input('data_recebimento');
-             echo $this->Form->input('arquivo', ['type' => 'file','label'=>'Deseja anexar um arquivo?']);
+//             echo $this->Form->input('arquivo', ['type' => 'file','label'=>'Deseja anexar um arquivo?']);
           
             echo $this->Form->input('identificacao',['label'=> 'A identificação das áreas do conhecimento (grande área, área e subárea) são condizentes com a proposta do projeto?']);
             echo $this->Form->input('idt_obs',['label'=> '','placeholder'=>'Observações:']);
@@ -64,7 +64,9 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
             echo $this->Form->input('conclusao',['label'=>'Conclusão do parecerista','placeholder'=>'Observações: Comentários adicionais do parecerista:']);
         ?>
     </fieldset>
+    <div>
     <?= $this->Form->button(__('Enviar'), ['name' => 'submit', 'value' => 'adicionar', 'type' => 'submit', 'class' => 'btn btn-success']) ?>
         <?= $this->Form->end() ?>
        <?= $this->Html->link('Voltar', ['controller' => 'Projetos', 'action' => 'redirecionar'], ['class' => 'btn btn-primary']); ?>
+    </div>
 </div>

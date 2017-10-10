@@ -49,10 +49,10 @@
         echo $this->Form->input('data_inicio',['label'=> 'Data do Início' ,'type' => 'text', 'class' => 'data_bp', 'style' => 'width: 150px;']);
         echo $this->Form->input('data_fim', ['type' => 'text', 'empty' => true, 'default' => '', 'id' => 'data_fim', 'class' => 'data_bp', 'style' => 'width: 150px;']);
         echo '<div id=div_extensao>';
-        echo $this->Form->input('id_area_tematica',['options' => $areas_tematicas, 'empty' => '(Selecione uma area)']);        
-        echo $this->Form->input('id_linha_extensao',['options' => $linhas_extensao,  'empty' => '(Selecione uma extensão)']);        
+        echo $this->Form->input('id_area_tematica',['label'=> 'Área Temática ','options' => $areas_tematicas, 'empty' => '(Selecione uma area)']);        
+        echo $this->Form->input('id_linha_extensao',['label'=> 'Linha de extensão ','options' => $linhas_extensao,  'empty' => '(Selecione uma extensão)']);        
         echo '</div>';
-        echo $this->Form->input('cod_areas_conhecimentos',['label'=> 'Areas do Conhecimento' ,'options' => $areas]);        
+        echo $this->Form->input('cod_areas_conhecimentos',['label'=> 'Áreas do Conhecimento' ,'options' => $areas]);        
         echo $this->Form->input('comite_etica', ['label' => 'Necessita Comitê de Ética?', 'type' => 'checkbox', 'empty' => true]);
         echo $this->Form->input('descricao_projeto',['label'=> 'Descrição do projeto' ]);
         echo $this->Form->input('curso_id', ['options' => $cursos, 'empty' => true, 'style' => 'width: 200px;']);

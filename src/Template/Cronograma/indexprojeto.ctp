@@ -25,7 +25,7 @@
                 <th><?= $this->Paginator->sort('outubro') ?></th>
                 <th><?= $this->Paginator->sort('novembro') ?></th>
                 <th><?= $this->Paginator->sort('desembro',['label'=> 'Dezembro']) ?></th>
-                <th class="actions"><?= __('Actions') ?></th>
+                <th class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -34,7 +34,7 @@
                 
               
                 <td><?= $cronograma->atividade ?></td>
-                <td><?= $cronograma->janeiro == 1 ? 'X': '' ?></td>
+                <td style="align-items: center"><?= $cronograma->janeiro == 1 ? 'X': '' ?></td>
                 <td><?= h($cronograma->fevereiro == 1 ? 'X': '' ) ?></td>
                 <td><?= h($cronograma->marco == 1 ? 'X': '' ) ?></td>
                 <td><?= h($cronograma->abril == 1 ? 'X': '' ) ?></td>

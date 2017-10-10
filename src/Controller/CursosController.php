@@ -50,7 +50,7 @@ class CursosController extends AppController {
         if ($this->request->is('post')) {
             $curso = $this->Cursos->patchEntity($curso, $this->request->data);
             if ($this->Cursos->save($curso)) {
-                $this->Flash->success(__('The curso has been saved.'));
+                $this->Flash->success(__('Curso salvo com sucesso!.'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The curso could not be saved. Please, try again.'));
@@ -77,7 +77,7 @@ class CursosController extends AppController {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $curso = $this->Cursos->patchEntity($curso, $this->request->data);
             if ($this->Cursos->save($curso)) {
-                $this->Flash->success(__('The curso has been saved.'));
+                $this->Flash->success(__('Curso alterado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The curso could not be saved. Please, try again.'));

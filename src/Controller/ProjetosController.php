@@ -35,7 +35,7 @@ class ProjetosController extends AppController {
     public function index() {
         $pessoa = $this->Auth->user('pessoa_id');
 //        $query = $this->Projetos->find('all')->contain(['Cursos', 'Pessoas', 'AreasConhecimentos', 'Setores']);
-        $query = $this->Projetos->find('all')->contain(['Cursos', 'Pessoas', 'AreasConhecimentos', 'Setores'])
+        $query = $this->Projetos->find('all')->contain(['Cursos', 'Pessoas', 'AreasConhecimentos', 'Setores','Cronograma'])
 //                ->hydrate(false)
                         ->join([
                             'p' => [
@@ -48,8 +48,16 @@ class ProjetosController extends AppController {
 //            'contain' => ['Cursos', 'Pessoas', 'AreasConhecimentos', 'Setores']
 //        ];
 //        $this->set('projetos', $this->paginate($this->Projetos));
+       //debug($query); exit;
+        
+       
+     
         $this->set('projetos', $this->paginate($query));
+        
         $this->set('_serialize', ['projetos']);
+       
+        
+        
     }
 
     /**
@@ -61,7 +69,7 @@ class ProjetosController extends AppController {
 
         $pessoa_usuario = $this->Auth->user('pessoa_id');
         $query = $this->Projetos->find('all')->where(['parecerista_id' => $pessoa_usuario]);
-        $this->set('projetos', $this->paginate($query));
+   //     $this->set('projetos', $this->paginate($query));
 //        $this->paginate = [
 //            'contain' => ['Cursos', 'Pessoas', 'AreasConhecimentos', 'Setores']
 //        ];
@@ -79,8 +87,11 @@ class ProjetosController extends AppController {
         $this->paginate = [
             'contain' => ['Cursos', 'Pessoas'], 'finder' => 'protocolados'
         ];
+       
+        $this->set('role', User::ROLE_PROPONENTE);
         $this->set('projetos', $this->paginate($this->Projetos));
         $this->set('_serialize', ['projetos']);
+        $this->set('_serialize', ['role']);
     }
 
     /**
@@ -98,10 +109,10 @@ class ProjetosController extends AppController {
         ]);
         $role = $this->request->session()->read('role')['role'];
         $isCoor = $projeto->isCoordenador($this->Auth->user(), $projeto);
-        if (!$isCoor && $role == User::ROLE_PROPONENTE) {
-            $this->Flash->error(__('Usuário não tem permissão para visualizar o Projeto.'));
-            return $this->redirect(['action' => 'index']);
-        }
+//        if (!$isCoor && $role == User::ROLE_PROPONENTE  ) {
+//            $this->Flash->error(__('Usuário não tem permissão para visualizar o Projeto.'));
+//            return $this->redirect(['action' => 'index']);
+//        }
 //        $role = $this->request->session()->read('role')['role'];
         $this->set('projeto', $projeto);
         $this->set('user_role', $role);
@@ -329,7 +340,12 @@ class ProjetosController extends AppController {
 
         $cursos = $this->Projetos->Cursos->find('list', ['limit' => 200]);
         $pessoas = $this->Projetos->Pessoas->find('list', ['limit' => 200]);
-        $this->set(compact('projeto', 'cursos', 'pessoas', 'areas'));
+         $cronograma = $this->Projetos->Cronograma->find()
+                ->where(['idprojeto' => $projeto->id])
+                ->contain(['Projetos']);
+        
+      //  debug($cronograma); exit;
+        $this->set(compact('projeto', 'cursos', 'pessoas', 'areas','cronograma'));
         $this->set('_serialize', ['projeto']);
     }
 

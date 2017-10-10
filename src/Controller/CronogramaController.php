@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\User;
+
 
 /**
  * Cronograma Controller
@@ -138,6 +140,34 @@ class CronogramaController extends AppController {
         }
         $projeto = $this->Projetos->get($idprojeto, ['contain' => ['Cursos', 'Pessoas', 'Cronograma', 'AreasConhecimentos', 'SolicitacoesCertificados', 'ParticipantesProjetos', 'ParticipantesProjetos.Pessoas']]);
         return $this->redirect(['action' => 'indexprojeto', $projeto->id]);
+    }
+
+    public function isAuthorized($user) {
+        $role = $this->request->session()->read('role')['role'];
+
+        if ($this->request->action === 'redirecionar') {
+            return true;
+        }
+
+
+        if ($role == User::ROLE_PARECERISTA) {
+            if (in_array($this->request->action, ['view'])) {
+                return true;
+            }
+        }
+
+        if ($role == User::ROLE_PRESIDENTE) {
+            if (in_array($this->request->action, [ 'view','indexprojeto'])) {
+                return true;
+            }
+        }
+
+        if ($role == User::ROLE_PROPONENTE) {
+            if (in_array($this->request->action, ['indexprojeto', 'index','edit', 'view','add' ])) {
+                return true;
+            }
+        }
+        return parent::isAuthorized($user);
     }
 
 }

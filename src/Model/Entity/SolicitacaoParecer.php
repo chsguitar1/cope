@@ -19,6 +19,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $data_limite_aceite
  * @property \Cake\I18n\Time $data_limite_envio
  * @property \Cake\I18n\Time $created
+ * * @property \App\Model\Entity\Projeto $projeto
  */
 class SolicitacaoParecer extends Entity {
 

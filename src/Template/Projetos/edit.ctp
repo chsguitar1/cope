@@ -80,27 +80,50 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <fieldset>
-                                <legend><?= __('Detalhes do Projeto.') ?></legend>
+                                <legend><?= __('Detalhes do Cronograma Projeto.') ?></legend>
 
-                                <span style="font-weight: bold;"> Título do Projeto: </span><?= $projeto->tituto_projeto; ?>
+                              
 
-                               
 
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Titulo do Projeto</th>
+
                                             <th>Avitidade</th>
-                                            
-                                            <th>Ações</th>
+                                            <th>Janeiro</th>
+                                            <th>Fevereiro</th>
+                                            <th>Março</th>
+                                            <th>Abril</th>
+                                            <th>Maio</th>
+                                            <th>Junho</th>
+                                            <th>Julho</th>
+                                            <th>Agosto</th>
+                                            <th>Setembro</th>
+                                            <th>Outubro</th>
+                                            <th>Novembro</th>
+                                            <th>Dezembro</th>
+
+                                           
                                         </tr>
                                     </thead>
 
-                                    <?php foreach ($projeto->cronogramas as $an): ?>
+                                    <?php foreach ($cronograma as $an): ?>
                                         <tr>
-                                            <td><?= h($projeto->tituto_projeto) ?></td>
+
                                             <td><?= h($an->atividade) ?></td>
-                                            
+                                            <td><?= h($an->janeiro == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->fevereiro == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->marco == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->abril == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->maio == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->junho == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->julho == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->agosto == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->setembro == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->outubro == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->novembro == 1 ? 'X' : '' ) ?></td>
+                                            <td><?= h($an->desembro == 1 ? 'X' : '' ) ?></td>
+
                                             <td><td>
                                         </tr>
 

@@ -42,16 +42,30 @@
                     <td><?= h($projeto->num_sipac) ?></td>
                     <td><b><?= ($projeto->rascunho) ? '<span style="color: red;"> Rascunho</span>' : 'Protocolado' ?></b></td>
                     <td class="actions">
-                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'add_participantes', $projeto->id], ['title' => 'Participantes', 'class' => 'btn btn-default fa fa-users']) : '' ?>
-                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['controller'=> 'Cronograma','action' => 'indexprojeto', $projeto->id], ['title' => 'Cronograma', 'class' => 'btn btn-default glyphicon glyphicon-calendar']) : '' ?>
-                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'edit', $projeto->id], ['title' => 'Editar', 'class' => 'btn btn-default fa fa-pencil']) : '' ?>
+                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'add_participantes',
+                            $projeto->id], ['title' => 'Participantes', 'class' => 'btn btn-default fa fa-users']) : '' ?>
+                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['controller'=> 'Cronograma','action' => 'indexprojeto',
+                            $projeto->id], ['title' => 'Cronograma', 'class' => 'btn btn-default glyphicon glyphicon-calendar']) : '' ?>
+                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'edit', $projeto->id], 
+                                ['title' => 'Editar', 'class' => 'btn btn-default fa fa-pencil']) : '' ?>
                         <?= ($projeto->rascunho) ? $this->Form->postLink(__(''), ['action' => 'delete', $projeto->id], 
-                                ['confirm' => __('Tem certeza que deseja remover # {0}?',
+                                ['confirm' => __('Tem certeza que deseja remover o projeto?',
                                 $projeto->id), 'class' => 'btn btn-default fa fa-trash-o', 'title' => 'Deletar']) : '' ?>
                         
-                        <?= $this->Html->link(__(''), ['action' => 'view', $projeto->id], ['title' => 'Ver', 'class' => 'btn btn-default fa fa-eye']) ?>
-                        <?= (!$projeto->rascunho) ? $this->Html->link(__(''), ['controller' => 'Acompanhamentos', 'action' => 'index', $projeto->id], ['title' => 'Acompanhamentos', 'class' => 'btn btn-default fa fa-comment']) : '' ?>
-                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'pre_protocolo', $projeto->id], [ 'title' => 'Protocolar', 'class' => 'btn btn-default fa  fa-check']) : '' ?>
+                        <?= (!$projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'view', $projeto->id], 
+                                ['title' => 'Ver', 'class' => 'btn btn-default fa fa-eye']) : '' ?>
+                       
+                        <?= (!$projeto->rascunho) ? $this->Html->link(__(''), ['controller' => 'Relatorio', 'action' => 'index', $projeto->id],
+                                ['title' => 'Relatório Final', 'class' => 'btn btn-default glyphicon glyphicon-list-alt']) : '' ?>
+                         <?= (!$projeto->rascunho) ? $this->Html->link(__(''), ['controller' => 'Certificado', 'action' => 'index', $projeto->id], 
+                                ['title' => 'Certificados', 'class' => 'btn btn-default glyphicon glyphicon-education']) : '' ?>
+                       
+                        <?= (!$projeto->rascunho) ?  $this->Html->link(' ', ['controller' => 'Acompanhamentos', 'action' => 'index', $projeto->id],
+                                ['title' => 'Declaração', 'class' => 'btn btn-default glyphicon glyphicon-edit']) : ' ' ?>
+                         <?= (!$projeto->rascunho) ?  $this->Html->link(' ', ['controller' => 'Acompanhamentos', 'action' => 'index', $projeto->id],
+                                ['title' => 'Acompanhamentos', 'class' => 'btn btn-default fa fa-comment']) : ' ' ?>
+                        <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'pre_protocolo', $projeto->id],
+                                [ 'title' => 'Protocolar', 'class' => 'btn btn-default fa  fa-check']) : '' ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

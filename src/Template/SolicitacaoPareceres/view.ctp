@@ -53,7 +53,7 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
                 </div>
                 <div class="row texts">
                     <div class="col-lg-9">
-                        <h4><b><?= __('Observacao Aceitacao Rejeição') ?></b></h4>
+                        <h4><b><?= __('Observacão,  Aceitacao,  Rejeição') ?></b></h4>
                         <?= $this->Text->autoParagraph(h($solicitacaoParecere->observacao_aceitacao_rejeicao)); ?>
 
                     </div>

@@ -23,11 +23,11 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
         <td><?= $projeto->ano ?></td>
 
         <tr>
-            <th><?= __('Grande Area Conhecimento') ?></th>
+            <th><?= __('Grande Área Conhecimento') ?></th>
             <td><?= $projeto->areasConhecimentoToStr($projeto->grande_area_conhecimento) ?></td>
         </tr>
         <tr>
-            <th><?= __('Situacao Projeto') ?></th>
+            <th><?= __('Situação Projeto') ?></th>
             <td><?= $projeto->tiposSituacaoToStr($projeto->situacao_projeto) ?></td>
         </tr>
         <tr>

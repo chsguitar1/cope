@@ -193,7 +193,7 @@ class UsersController extends AppController {
             }
         
         } elseif ($role == User::ROLE_PROPONENTE) {
-            if (in_array($this->request->action, ['edit', 'view', 'index', 'add', 'logout'])) {
+            if (in_array($this->request->action, ['logout'])) {
                 return true;
             }
         }

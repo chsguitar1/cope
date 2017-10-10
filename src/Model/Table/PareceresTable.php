@@ -62,9 +62,9 @@ class PareceresTable extends Table
 //            ->requirePresence('arquivo', 'create')
 //            ->notEmpty('arquivo');
 
-        $validator
-            ->requirePresence('nome_arquivo', 'create')
-            ->notEmpty('nome_arquivo');
+//        $validator
+//            ->requirePresence('nome_arquivo', 'create')
+//            ->notEmpty('nome_arquivo');
 
         return $validator;
     }
@@ -79,7 +79,7 @@ class PareceresTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['parecerista_id'], 'Pareceresista'));
-        $rules->add($rules->existsIn(['id_solicitacao_parecer'], 'Projetos'));
+      //  $rules->add($rules->existsIn(['id_solicitacao_parecer'], 'Projetos'));
         return $rules;
     }
 }

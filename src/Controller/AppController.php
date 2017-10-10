@@ -108,8 +108,8 @@ class AppController extends Controller {
 //            die('YES');
             return true;
         }
-//        $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
-        $this->Flash->error(__('Acesso negado.'));
+      //  $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
+        $this->Flash->error(__('Acesso negado!'));
         
         return false;
     }

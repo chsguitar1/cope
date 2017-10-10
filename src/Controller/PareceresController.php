@@ -27,6 +27,7 @@ class PareceresController extends AppController {
         $solicitacaoParecer = $this->SolicitacaoPareceres->get($id, [
             'contain' => ['Pessoas', 'Projetos']
         ]);
+        
         if ($this->request->is('post')) {
             $parecerNovo = $this->Pareceres->patchEntity($parecer, $this->request->data);
             $btn = $this->request->data()['submit'];
@@ -36,28 +37,29 @@ class PareceresController extends AppController {
 
             $parecerNovo->is_solicitacao_parecer = $id;
          //   if ($parecerNovo->tipo_parecer > 1) {
-                if (isset($this->request->data['arquivo'])) {
-                    $filename = $this->request->data['arquivo']['name'];
-                    $tmp_path = $this->request->data['arquivo']['tmp_name'];
-                    $novo_nome = Text::uuid() . '-' . $filename;
-                    $file_old = new File($tmp_path);
-                    $ext = pathinfo($filename, PATHINFO_EXTENSION);
-                    //die($ext);
-                    if (!in_array(strtolower($ext), ['pdf', 'jpg', 'doc', 'docx'])) {
-                        $this->Flash->error(__('A extensão não é permitida.'));
-                        return $this->redirect(['action' => 'addAnexos', $projeto->id]);
-                    }
-//                copy(string $dest, boolean $overwrite = true)
+//                if ($this->request->data['arquivo']) {
+//                    $filename = $this->request->data['arquivo']['name'];
+//                    $tmp_path = $this->request->data['arquivo']['tmp_name'];
+//                    $novo_nome = Text::uuid() . '-' . $filename;
+//                    $file_old = new File($tmp_path);
+//                    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+//                    //die($ext);
+//                    if (!in_array(strtolower($ext), ['pdf', 'jpg', 'doc', 'docx'])) {
+//                        $this->Flash->error(__('A extensão não é permitida.'));
+//                        return $this->redirect(['action' => 'addAnexos', $projeto->id]);
+//                    }
+////                copy(string $dest, boolean $overwrite = true)
+//
+//                    $dir = new Folder('anexos', true);
+//                    $file_old->copy('anexos/' . $novo_nome, true);
+//                }
 
-                    $dir = new Folder('anexos', true);
-                    $file_old->copy('anexos/' . $novo_nome, true);
-                }
-
-                $parecerNovo->arquivo = 'anexos/' . $novo_nome;
-                $parecerNovo->nome_arquivo = $filename;
+              //  $parecerNovo->arquivo = 'anexos/' . $novo_nome;
+             //   $parecerNovo->nome_arquivo = $filename;
            // }
             $parecerNovo->data_recebimento = \Cake\I18n\Time::now();
             $parecerNovo->id_solicitacao_parecer = $solicitacaoParecer->id;
+          //  debug($parecerNovo); exit;
             if ($this->Pareceres->save($parecerNovo)) {
                 $this->Flash->success(__('O Parecer foi salvo.'));
                 $eventos = new EventosController();
@@ -192,8 +194,6 @@ class PareceresController extends AppController {
         if ($this->request->action === 'redirecionar') {
             return true;
         }
-
-
 
         if ($role == User::ROLE_PRESIDENTE) {
             if (in_array($this->request->action, ['add', 'edit', 'view', 'index', 'addSolicitacao', 'download'])) {
