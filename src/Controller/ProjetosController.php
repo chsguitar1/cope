@@ -516,6 +516,7 @@ class ProjetosController extends AppController {
         
 
         $role = $this->request->session()->read('role')['role'];
+       // debug($role); exit;
         switch ($role) {
             case \App\Model\Entity\User::ROLE_PROPONENTE :
                 return $this->redirect(['action' => 'index']);

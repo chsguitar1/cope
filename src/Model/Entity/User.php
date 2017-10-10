@@ -46,11 +46,11 @@ class User extends Entity {
     }
 
     public static function escoposUsers() {
-        return [0 => 'Administrador', 1 => 'Presidente', 2 => 'Parecerista', 3 => 'Coordenador de Pesquisa e Extensão', 4 => 'Sec. Acadêmica', 5 => 'Membro Cope', 6 => 'Proponente',7 => 'Parecerista'];
+        return [0 => 'Administrador', 1 => 'Presidente', 2 => 'Parecerista', 3 => 'Coordenador de Pesquisa e Extensão', 4 => 'Sec. Acadêmica', 5 => 'Membro Cope', 6 => 'Proponente'];
     }
 
     public static function escoposUsersToStr($i) {
-        $escopos = [0 => 'Administrador', 1 => 'Presidente', 2 => 'Parecerista', 3 => 'Coordenador de Pesquisa e Extensão', 4 => 'Sec. Acadêmica', 5 => 'Membro Cope', 6 => 'Proponente',7 => 'Parecerista'];
+        $escopos = [0 => 'Administrador', 1 => 'Presidente', 2 => 'Parecerista', 3 => 'Coordenador de Pesquisa e Extensão', 4 => 'Sec. Acadêmica', 5 => 'Membro Cope', 6 => 'Proponente'];
         return $escopos[$i];
     }
 
