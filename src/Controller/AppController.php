@@ -101,17 +101,33 @@ class AppController extends Controller {
         }
     }
 
-    public function isAuthorized($user) {
+//    public function isAuthorized($user) {
+//        $role = $this->request->session()->read('role');
+//
+//        if ($role['role'] == \App\Model\Entity\User::ROLE_ADMIN) {
+////            die('YES');
+//            return true;
+//        }
+//      //  $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
+//        $this->Flash->error(__('Acesso negado!'));
+//        
+//        return false;
+//    }
+
+      public function isAuthorized($user) {
         $role = $this->request->session()->read('role');
 
-        if ($role['role'] == \App\Model\Entity\User::ROLE_ADMIN) {
+        if ( $role['role'] == \App\Model\Entity\User::ROLE_PARECERISTA || 
+                $role['role'] == \App\Model\Entity\User::ROLE_PRESIDENTE ||
+                $role['role'] == \App\Model\Entity\User::ROLE_PROPONENTE    ) {
 //            die('YES');
-            return true;
+            return false;
+        }elseif ($role['role'] == \App\Model\Entity\User::ROLE_ADMIN ) {
+            return true;;
         }
       //  $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
         $this->Flash->error(__('Acesso negado!'));
         
         return false;
     }
-
 }

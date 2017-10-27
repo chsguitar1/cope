@@ -9,7 +9,7 @@ $this->start('tb_actions');
 <fieldset>
     <legend><?= __('Adicionar Solicitação de Parecer - Projeto: ' . $nome_projeto) ?></legend>
     <?php
-    echo $this->Form->input('id_pessoa', ['options' => $pessoas]);
+    echo $this->Form->input('id_pessoa', ['label'=> 'Pessoa','options' => $pessoas]);
     //echo $this->Form->input('data_solicitacao');
 //    echo $this->Form->input('data_aceitacao_rejeicao');
     echo $this->Form->input('tipo_parecer', ['options' => $tipos_pareceres]);

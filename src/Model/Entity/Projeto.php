@@ -25,6 +25,8 @@ use Cake\ORM\Entity;
  * @property int $parecerista_id
  * @property \App\Model\Entity\Pessoa $pessoa
  
+ * @property \App\Model\Entity\RelatorioFinal $relatorio_final
+ 
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property string $rascunho
@@ -39,6 +41,7 @@ use Cake\ORM\Entity;
  * @property string $referencias
  * @property string $metodologia
  * @property boolean $status
+ * @property boolean $tem_rel_final
  * @property \Cake\I18n\Time $data_protocolo
  * @property \App\Model\Entity\Parecere[] $pareceres
  * @property \App\Model\Entity\Relatorio[] $relatorios

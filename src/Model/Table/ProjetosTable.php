@@ -115,6 +115,9 @@ class ProjetosTable extends Table {
         $this->hasMany('SolicitacaoPareceres', [
             'foreignKey' => 'id_projeto'
         ]);
+        $this->hasMany('RelatorioFinal', [
+            'foreignKey' => 'id_projeto'
+        ]);
     }
 
     /**

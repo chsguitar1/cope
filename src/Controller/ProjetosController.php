@@ -512,9 +512,6 @@ class ProjetosController extends AppController {
     }
 
     public function redirecionar($role = null) {
-        
-        
-
         $role = $this->request->session()->read('role')['role'];
        // debug($role); exit;
         switch ($role) {
@@ -535,20 +532,16 @@ class ProjetosController extends AppController {
         if ($this->request->action === 'redirecionar') {
             return true;
         }
-
-
         if ($role == User::ROLE_PARECERISTA) {
             if (in_array($this->request->action, ['indexParecerista', 'view'])) {
                 return true;
             }
         }
-
         if ($role == User::ROLE_PRESIDENTE) {
             if (in_array($this->request->action, ['edit', 'view', 'indexPresidente', 'listarAnexos'])) {
                 return true;
             }
         }
-
         if ($role == User::ROLE_PROPONENTE) {
             if (in_array($this->request->action, ['index', 'edit', 'view', 'preProtocolo', 'addRequerente', 'addParticipantes',
                         'delete', 'delParticipante', 'addAnexos', 'delAnexo', 'listarAnexos'])) {

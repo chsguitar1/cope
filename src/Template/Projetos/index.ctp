@@ -1,11 +1,11 @@
-<div class="projetos index large-9 medium-8 columns content">
+<div >
     <h3><?= __('Meus Projetos') ?></h3>
 
     <?php
     $this->extend('../Layout/TwitterBootstrap/dashboard');
     ?>
     
-    <nav class="navbar navbar-default">
+    <nav >
         <div class="container-fluid container">
            <?= $this->Html->link(__('Novo Projeto'), ['action' => 'addRequerente'], ['class' => 'btn btn-primary']) ?>
         </div>
@@ -19,8 +19,8 @@
                     <th><?= $this->Paginator->sort('ano') ?></th>
                     <th><?= $this->Paginator->sort('titulo') ?></th>
                     <th><?= $this->Paginator->sort('data_inicio') ?></th>
-                    <th><?= $this->Paginator->sort('data_fim') ?></th>
-                    <th><?= $this->Paginator->sort('cod_areas_conhecimentos') ?></th>
+                    <th><?= $this->Paginator->sort('data_fim',['label'=> 'Data final']) ?></th>
+                    <th><?= $this->Paginator->sort('cod_areas_conhecimentos',['label'=>'Áreas do Conhecimento']) ?></th>
                     <th><?= $this->Paginator->sort('setor_atual') ?></th>
                     <th><?= $this->Paginator->sort('num_protocolo') ?></th>
                     <th><?= $this->Paginator->sort('num_sipac') ?></th>
@@ -55,8 +55,10 @@
                         <?= (!$projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'view', $projeto->id], 
                                 ['title' => 'Ver', 'class' => 'btn btn-default fa fa-eye']) : '' ?>
                        
-                        <?= (!$projeto->rascunho) ? $this->Html->link(__(''), ['controller' => 'Relatorio', 'action' => 'index', $projeto->id],
-                                ['title' => 'Relatório Final', 'class' => 'btn btn-default glyphicon glyphicon-list-alt']) : '' ?>
+                        <?= 
+ 
+                (!$projeto->rascunho && !$projeto->tem_rel_final  ) ? $this->Html->link(__(''), ['controller' => 'RelatorioFinal', 'action' => 'add', $projeto->id],
+                                ['title' => 'Relatório', 'class' => 'btn btn-default glyphicon glyphicon-list-alt']) : '' ?>
                          <?= (!$projeto->rascunho) ? $this->Html->link(__(''), ['controller' => 'Certificado', 'action' => 'index', $projeto->id], 
                                 ['title' => 'Certificados', 'class' => 'btn btn-default glyphicon glyphicon-education']) : '' ?>
                        

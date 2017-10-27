@@ -107,11 +107,11 @@ class SolicitacaoPareceresController extends AppController {
             if ($this->SolicitacaoPareceres->save($solicitacaoParecer)) {
                 $ress = $eventos->registraEvento(['pid' => $projeto_id, 'tipo' => 1, 'descricao' => 'Designado parecerista.',
                     'setor_destino' => $setor->id, 'responsavel_id' => $this->Auth->user('pessoa_id')]);
-                $email = new Email('default');
-                $email->from(['chsguitar1@gmail.com' => 'Cope'])
-                        ->to($emailPessoa->email)
-                        ->subject('Projeto Cope')
-                        ->send('Foi designado um projeto  para sua apreciação');
+                //$email = new Email('default');
+                //$email->from(['chsguitar1@gmail.com' => 'Cope'])
+                  //      ->to($emailPessoa->email)
+                    //    ->subject('Projeto Cope')
+                      //  ->send('Foi designado um projeto  para sua apreciação');
                 $this->Flash->success(__('A solicitação foi salva!'));
 
 
