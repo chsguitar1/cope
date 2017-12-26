@@ -2,7 +2,6 @@
 
 namespace App\Model\Table;
 
-use App\Model\Entity\Projeto;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
@@ -117,6 +116,9 @@ class ProjetosTable extends Table {
         ]);
         $this->hasMany('RelatorioFinal', [
             'foreignKey' => 'id_projeto'
+        ]);
+        $this->hasMany('PaticipantesV', [
+            'foreignKey' => 'idprojeto'
         ]);
     }
 

@@ -57,8 +57,13 @@ class ComposerStaticInitc482ef36cbaa903df8d33a417874b9fc
             'Http\\Client\\Common\\' => 19,
             'Http\\Client\\' => 12,
         ),
+        'F' => 
+        array (
+            'FontLib\\' => 8,
+        ),
         'D' => 
         array (
+            'Dompdf\\' => 7,
             'DebugKit\\Test\\Fixture\\' => 22,
             'DebugKit\\' => 9,
         ),
@@ -160,6 +165,14 @@ class ComposerStaticInitc482ef36cbaa903df8d33a417874b9fc
         array (
             0 => __DIR__ . '/..' . '/php-http/httplug/src',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
         'DebugKit\\Test\\Fixture\\' => 
         array (
             0 => __DIR__ . '/..' . '/cakephp/debug_kit/tests/Fixture',
@@ -207,6 +220,17 @@ class ComposerStaticInitc482ef36cbaa903df8d33a417874b9fc
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Svg\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src',
+            ),
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
+            ),
+        ),
         'P' => 
         array (
             'Psy\\' => 
@@ -264,6 +288,12 @@ class ComposerStaticInitc482ef36cbaa903df8d33a417874b9fc
     );
 
     public static $classMap = array (
+        'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
         'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'SqlFormatter' => __DIR__ . '/..' . '/jdorn/sql-formatter/lib/SqlFormatter.php',
     );

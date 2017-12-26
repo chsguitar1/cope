@@ -66,6 +66,8 @@
                                 ['title' => 'Declaração', 'class' => 'btn btn-default glyphicon glyphicon-edit']) : ' ' ?>
                          <?= (!$projeto->rascunho) ?  $this->Html->link(' ', ['controller' => 'Acompanhamentos', 'action' => 'index', $projeto->id],
                                 ['title' => 'Acompanhamentos', 'class' => 'btn btn-default fa fa-comment']) : ' ' ?>
+                         <?= (!$projeto->rascunho) ?  $this->Html->link(' ', ['controller' => 'Acompanhamentos', 'action' => 'index', $projeto->id],
+                                ['title' => 'Imprimir', 'class' => 'btn btn-default glyphicon glyphicon-print']) : ' ' ?>
                         <?= ($projeto->rascunho) ? $this->Html->link(__(''), ['action' => 'pre_protocolo', $projeto->id],
                                 [ 'title' => 'Protocolar', 'class' => 'btn btn-default fa  fa-check']) : '' ?>
                     </td>

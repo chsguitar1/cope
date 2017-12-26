@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Svg\\' => array($vendorDir . '/phenx/php-svg-lib/src'),
+    'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Mailgun' => array($vendorDir . '/mailgun/mailgun-php/src'),

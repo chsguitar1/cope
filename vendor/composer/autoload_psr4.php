@@ -25,6 +25,8 @@ return array(
     'Http\\Discovery\\' => array($vendorDir . '/php-http/discovery/src'),
     'Http\\Client\\Common\\' => array($vendorDir . '/php-http/client-common/src'),
     'Http\\Client\\' => array($vendorDir . '/php-http/httplug/src'),
+    'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src/FontLib'),
+    'Dompdf\\' => array($vendorDir . '/dompdf/dompdf/src'),
     'DebugKit\\Test\\Fixture\\' => array($vendorDir . '/cakephp/debug_kit/tests/Fixture'),
     'DebugKit\\' => array($vendorDir . '/cakephp/debug_kit/src'),
     'Clue\\StreamFilter\\' => array($vendorDir . '/clue/stream-filter/src'),
