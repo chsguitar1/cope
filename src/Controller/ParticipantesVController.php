@@ -26,7 +26,7 @@ class ParticipantesVController extends AppController
        
 //  $projeto = $this->Projetos->get($this->ParticipantesV->id, 
 //          ['contain' => ['Cursos', 'Anexos', 'Pessoas', 'SolicitacoesCertificados', 'ParticipantesProjetos', 'ParticipantesProjetos.Pessoas']]);
-      $projeto = TableRegistry::get('Projetos');
+      $projeto = TableRegistry::get('Viewprojeto');
       $query = $projeto->find()
               ->where(['id ='=>$id]);
      
